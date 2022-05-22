@@ -1,0 +1,33 @@
+<JavaCardProject name="ThucHanhJavaCard">
+<USER>
+<PKG name="Buoi2" aid="11 22 33 44 66" major="1" minor="0">
+<APPLET aid="11 22 33 44 66 00" instanceaid="" parameter="" authority="" privileges="" index="-30368" name="Bai2"/>
+<APPLET aid="11 22 33 44 66 01" instanceaid="" parameter="" authority="" privileges="" index="22408" name="NameAndDate"/>
+<APPLET aid="11 22 33 44 66 02" instanceaid="" parameter="" authority="" privileges="" index="31888" name="Calculator"/>
+<APPLET aid="11 22 33 44 66 03" instanceaid="" parameter="" authority="" privileges="" index="24688" name="NameAndDateInput"/>
+</PKG>
+<PKG name="TH2" aid="11 22 33 44 02" major="1" minor="0">
+<APPLET aid="11 22 33 44 02 00" instanceaid="" parameter="" authority="" privileges="" index="20584" name="TH2"/>
+</PKG>
+<PKG name="TH3" aid="11 22 33 44 03" major="1" minor="0">
+<APPLET aid="11 22 33 44 03 00" instanceaid="" parameter="" authority="" privileges="" index="-15568" name="TH3"/>
+<APPLET aid="11 22 33 44 03 01" instanceaid="" parameter="" authority="" privileges="" index="-31656" name="VD2"/>
+</PKG>
+<PKG name="TH4" aid="11 22 33 44 04" major="1" minor="0">
+<APPLET aid="11 22 33 44 04 00" instanceaid="" parameter="" authority="" privileges="" index="17912" name="TH4"/>
+<APPLET aid="11 22 33 44 04 01" instanceaid="" parameter="" authority="" privileges="" index="21576" name="Applet2"/>
+<APPLET aid="11 22 33 44 04 03" instanceaid="" parameter="" authority="" privileges="" index="9520" name="BTVN_TH4"/>
+<APPLET aid="11 22 33 44 04 04" instanceaid="" parameter="" authority="" privileges="" index="-2368" name="TH5"/>
+</PKG>
+<PKG name="myjavacardapplet" aid="00 00 00 00 00" major="1" minor="0">
+<CLASS name="AESUltils"/>
+<APPLET aid="00 00 00 00 00" instanceaid="" parameter="" authority="" privileges="" index="-8640" name="MyJavaCardApplet"/>
+</PKG>
+<PKG name="TH5" aid="11 22 33 44 55" major="1" minor="0">
+<APPLET aid="11 22 33 44 55 00" instanceaid="" parameter="" authority="" privileges="" index="8176" name="TH5"/>
+<CLASS name="masterInterface"/>
+<CLASS name="Bai2"/>
+</PKG>
+<Libs/>
+</USER>
+</JavaCardProject>

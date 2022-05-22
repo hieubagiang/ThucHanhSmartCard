@@ -1,0 +1,734 @@
+// converted by version 1.3
+// on Thu May 12 23:53:12 ICT 2022
+
+.package TH4 {
+	.aid 0x11:0x22:0x33:0x44:0x4;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0x11:0x22:0x33:0x44:0x4:0x0 TH4;
+		0x11:0x22:0x33:0x44:0x4:0x1 Applet2;
+		0x11:0x22:0x33:0x44:0x4:0x3 BTVN_TH4;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] TH4/monhoc;
+		// 1
+		instanceFieldRef byte[] TH4/diem;
+		// 2
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 3
+		virtualMethodRef 0.3.1()V;		// javacard/framework/Applet.register()V
+		// 4
+		virtualMethodRef 0.3.2([BSB)V;		// javacard/framework/Applet.register([BSB)V
+		// 5
+		staticFieldRef byte[] Applet2/sinhVien;
+		// 6
+		staticMethodRef 0.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 7
+		staticFieldRef byte Applet2/soLuongMonThi;
+		// 8
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+		// 9
+		virtualMethodRef 0.10.1()[B;		// javacard/framework/APDU.getBuffer()[B
+		// 10
+		virtualMethodRef 0.10.6()S;		// javacard/framework/APDU.setIncomingAndReceive()S
+		// 11
+		virtualMethodRef 0.10.7()S;		// javacard/framework/APDU.setOutgoing()S
+		// 12
+		virtualMethodRef 0.10.9(S)V;		// javacard/framework/APDU.setOutgoingLength(S)V
+		// 13
+		virtualMethodRef 0.10.5([BSS)V;		// javacard/framework/APDU.sendBytesLong([BSS)V
+		// 14
+		virtualMethodRef 0.10.4(SS)V;		// javacard/framework/APDU.sendBytes(SS)V
+		// 15
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 16
+		classRef BTVN_TH4;
+		// 17
+		staticMethodRef BTVN_TH4/<init>([BSB)V;
+		// 18
+		staticFieldRef byte[] BTVN_TH4/result;
+		// 19
+		virtualMethodRef 0.3.1()V;		// javacard/framework/Applet.register()V
+		// 20
+		virtualMethodRef 0.3.2([BSB)V;		// javacard/framework/Applet.register([BSB)V
+		// 21
+		staticFieldRef byte[] BTVN_TH4/sinhVien;
+		// 22
+		staticFieldRef byte BTVN_TH4/totalSubject;
+		// 23
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+		// 24
+		virtualMethodRef BTVN_TH4/input(Ljavacard/framework/APDU;[B)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 25
+		virtualMethodRef BTVN_TH4/showSubjectAndMark(Ljavacard/framework/APDU;[B)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 26
+		virtualMethodRef BTVN_TH4/updateMark(Ljavacard/framework/APDU;[B)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 27
+		virtualMethodRef BTVN_TH4/deleteMark(Ljavacard/framework/APDU;[B)V;
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+		// 28
+		staticFieldRef short BTVN_TH4/index;
+		// 29
+		virtualMethodRef 0.10.8(SS)V;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+		// 30
+		classRef TH4;
+		// 31
+		staticMethodRef TH4/<init>()V;
+		// 32
+		staticMethodRef Applet2/<init>([BSB)V;
+		// 33
+		classRef Applet2;
+		// 34
+		virtualMethodRef 0.3.1()V;		// javacard/framework/Applet.register()V
+		// 35
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+	}
+
+	.class public Applet2 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			static final byte SV_ID_LENGTH = 4;		// B
+			private static byte[] diemThi;		// [B
+			private static byte[] sinhVien;		// [B
+			private static byte soLuongMonThi;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 33;		// TH4/Applet2
+					dup;
+					aload_0;
+					sload_1;
+					sload_2;
+					invokespecial 32;		// TH4/Applet2.<init>([BSB)V
+					pop;
+					return;
+		}
+
+		.method private <init>([BSB)V {
+			.stack 5;
+			.locals 3;
+
+				L0:	aload_0;
+					invokespecial 2;		// javacard/framework/Applet.<init>()V
+					aload_1;
+					sload_2;
+					baload;
+					sstore 4;
+				L1:	sload 4;
+					ifne L3;
+				L2:	aload_0;
+					invokevirtual 3;		// javacard/framework/Applet.register()V
+					goto L4;
+				L3:	aload_0;
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					sload 4;
+					invokevirtual 4;		// javacard/framework/Applet.register([BSB)V
+				L4:	sload_2;
+					sload 4;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 5;
+				L5:	sload_2;
+					sload 5;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 6;
+				L6:	sinc 2 1;
+					sload 6;
+					ifeq L8;
+				L7:	sconst_4;
+					newarray 11;
+					putstatic_a 5;		// reference TH4/Applet2.sinhVien
+					aload_1;
+					sload_2;
+					getstatic_a 5;		// reference TH4/Applet2.sinhVien
+					sconst_0;
+					sconst_4;
+					invokestatic 6;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sinc 2 4;
+					aload_1;
+					sload_2;
+					baload;
+					putstatic_b 7;		// byte TH4/Applet2.soLuongMonThi
+					goto L9;
+				L8:	sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 83;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 86;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 48;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 49;
+					bastore;
+					putstatic_a 5;		// reference TH4/Applet2.sinhVien
+					bspush 8;
+					putstatic_b 7;		// byte TH4/Applet2.soLuongMonThi
+				L9:	return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 4;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 8;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 9;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_1;
+					invokevirtual 10;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L5 1 0 L4;
+				L4:	aload_1;
+					invokevirtual 11;		// javacard/framework/APDU.setOutgoing()S
+					pop;
+					aload_1;
+					sconst_5;
+					invokevirtual 12;		// javacard/framework/APDU.setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 5;		// reference TH4/Applet2.sinhVien
+					sconst_0;
+					sconst_4;
+					invokevirtual 13;		// javacard/framework/APDU.sendBytesLong([BSS)V
+					aload_2;
+					sconst_0;
+					getstatic_b 7;		// byte TH4/Applet2.soLuongMonThi
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_1;
+					invokevirtual 14;		// javacard/framework/APDU.sendBytes(SS)V
+					goto L6;
+				L5:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	return;
+		}
+
+	}
+
+	.class public BTVN_TH4 1 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			static final byte SV_ID_LENGTH = 4;		// B
+			private static byte[] result;		// [B
+			private static byte[] sinhVien;		// [B
+			private static byte totalSubject;		// B
+			private static short index;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+			input(Ljavacard/framework/APDU;[B)V;
+			showSubjectAndMark(Ljavacard/framework/APDU;[B)V;
+			updateMark(Ljavacard/framework/APDU;[B)V;
+			deleteMark(Ljavacard/framework/APDU;[B)V;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 16;		// TH4/BTVN_TH4
+					dup;
+					aload_0;
+					sload_1;
+					sload_2;
+					invokespecial 17;		// TH4/BTVN_TH4.<init>([BSB)V
+					pop;
+					bspush 20;
+					newarray 11;
+					putstatic_a 18;		// reference TH4/BTVN_TH4.result
+					return;
+		}
+
+		.method private <init>([BSB)V {
+			.stack 5;
+			.locals 3;
+
+				L0:	aload_0;
+					invokespecial 2;		// javacard/framework/Applet.<init>()V
+					aload_1;
+					sload_2;
+					baload;
+					sstore 4;
+				L1:	sload 4;
+					ifne L3;
+				L2:	aload_0;
+					invokevirtual 19;		// javacard/framework/Applet.register()V
+					goto L4;
+				L3:	aload_0;
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					sload 4;
+					invokevirtual 20;		// javacard/framework/Applet.register([BSB)V
+				L4:	sload_2;
+					sload 4;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 5;
+				L5:	sload_2;
+					sload 5;
+					sadd;
+					sconst_1;
+					sadd;
+					sstore_2;
+					aload_1;
+					sload_2;
+					baload;
+					sstore 6;
+				L6:	sinc 2 1;
+					sload 6;
+					ifeq L8;
+				L7:	sconst_4;
+					newarray 11;
+					putstatic_a 21;		// reference TH4/BTVN_TH4.sinhVien
+					aload_1;
+					sload_2;
+					getstatic_a 21;		// reference TH4/BTVN_TH4.sinhVien
+					sconst_0;
+					sconst_4;
+					invokestatic 6;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sinc 2 4;
+					aload_1;
+					sload_2;
+					baload;
+					putstatic_b 22;		// byte TH4/BTVN_TH4.totalSubject
+					goto L9;
+				L8:	sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 83;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 86;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 48;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 49;
+					bastore;
+					putstatic_a 21;		// reference TH4/BTVN_TH4.sinhVien
+					bspush 8;
+					putstatic_b 22;		// byte TH4/BTVN_TH4.totalSubject
+				L9:	return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 4;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 23;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 9;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_1;
+					invokevirtual 10;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+					aload_2;
+					sconst_1;
+					baload;
+					stableswitch L9 0 4 L4 L5 L6 L7 L8;
+				L4:	aload_1;
+					invokevirtual 11;		// javacard/framework/APDU.setOutgoing()S
+					pop;
+					aload_1;
+					sconst_5;
+					invokevirtual 12;		// javacard/framework/APDU.setOutgoingLength(S)V
+					aload_1;
+					getstatic_a 21;		// reference TH4/BTVN_TH4.sinhVien
+					sconst_0;
+					sconst_4;
+					invokevirtual 13;		// javacard/framework/APDU.sendBytesLong([BSS)V
+					aload_2;
+					sconst_0;
+					getstatic_b 22;		// byte TH4/BTVN_TH4.totalSubject
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_1;
+					invokevirtual 14;		// javacard/framework/APDU.sendBytes(SS)V
+					goto L10;
+				L5:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 24;		// TH4/BTVN_TH4.input(Ljavacard/framework/APDU;[B)V
+					goto L10;
+				L6:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 25;		// TH4/BTVN_TH4.showSubjectAndMark(Ljavacard/framework/APDU;[B)V
+					goto L10;
+				L7:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 26;		// TH4/BTVN_TH4.updateMark(Ljavacard/framework/APDU;[B)V
+					goto L10;
+				L8:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 27;		// TH4/BTVN_TH4.deleteMark(Ljavacard/framework/APDU;[B)V
+					goto L10;
+				L9:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	return;
+		}
+
+		.method  input(Ljavacard/framework/APDU;[B)V 128 {
+			.stack 3;
+			.locals 4;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+				L1:	aload_2;
+					sconst_3;
+					baload;
+					sstore 4;
+				L2:	sconst_0;
+					sstore 5;
+				L3:	getstatic_s 28;		// short TH4/BTVN_TH4.index
+					ifne L5;
+				L4:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sload_3;
+					s2b;
+					bastore;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sconst_1;
+					sadd;
+					putstatic_s 28;		// short TH4/BTVN_TH4.index
+					getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sload 4;
+					s2b;
+					bastore;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sconst_1;
+					sadd;
+					putstatic_s 28;		// short TH4/BTVN_TH4.index
+					goto L12;
+				L5:	sconst_0;
+					sstore 6;
+				L6:	sload 6;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					if_scmpge L10;
+				L7:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sload 6;
+					baload;
+					sload_3;
+					if_scmpne L9;
+				L8:	sconst_1;
+					sstore 5;
+					return;
+				L9:	sinc 6 2;
+					goto L6;
+				L10:	sload 5;
+					ifne L12;
+				L11:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sload_3;
+					s2b;
+					bastore;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sconst_1;
+					sadd;
+					putstatic_s 28;		// short TH4/BTVN_TH4.index
+					getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sload 4;
+					s2b;
+					bastore;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sconst_1;
+					sadd;
+					putstatic_s 28;		// short TH4/BTVN_TH4.index
+				L12:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 25;		// TH4/BTVN_TH4.showSubjectAndMark(Ljavacard/framework/APDU;[B)V
+					return;
+		}
+
+		.method  showSubjectAndMark(Ljavacard/framework/APDU;[B)V 129 {
+			.stack 5;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					invokestatic 6;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					invokevirtual 29;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method  updateMark(Ljavacard/framework/APDU;[B)V 130 {
+			.stack 3;
+			.locals 4;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+				L1:	aload_2;
+					sconst_3;
+					baload;
+					sstore 4;
+				L2:	sconst_0;
+					sstore 5;
+				L3:	sconst_0;
+					sstore 6;
+				L4:	sload 6;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					if_scmpge L8;
+				L5:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sload 6;
+					baload;
+					sload_3;
+					if_scmpne L7;
+				L6:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sload 6;
+					sconst_1;
+					sadd;
+					sload 4;
+					s2b;
+					bastore;
+				L7:	sinc 6 2;
+					goto L4;
+				L8:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 25;		// TH4/BTVN_TH4.showSubjectAndMark(Ljavacard/framework/APDU;[B)V
+					return;
+		}
+
+		.method  deleteMark(Ljavacard/framework/APDU;[B)V 131 {
+			.stack 4;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+				L1:	sconst_0;
+					sstore 4;
+				L2:	sload 4;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					if_scmpge L9;
+				L3:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sload 4;
+					baload;
+					sload_3;
+					if_scmpne L8;
+				L4:	sload 4;
+					sconst_2;
+					sadd;
+					sstore 5;
+				L5:	sload 5;
+					getstatic_s 28;		// short TH4/BTVN_TH4.index
+					if_scmpge L7;
+				L6:	getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sload 4;
+					sinc 4 1;
+					getstatic_a 18;		// reference TH4/BTVN_TH4.result
+					sload 5;
+					baload;
+					bastore;
+					sinc 5 1;
+					goto L5;
+				L7:	getstatic_s 28;		// short TH4/BTVN_TH4.index
+					sconst_2;
+					ssub;
+					putstatic_s 28;		// short TH4/BTVN_TH4.index
+				L8:	sinc 4 2;
+					goto L2;
+				L9:	aload_0;
+					aload_1;
+					aload_2;
+					invokevirtual 25;		// TH4/BTVN_TH4.showSubjectAndMark(Ljavacard/framework/APDU;[B)V
+					return;
+		}
+
+	}
+
+	.class public TH4 2 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private byte[] monhoc 0;		// [B
+			private byte[] diem 1;		// [B
+			static final byte SO_LUONG_MON_HOC = 10;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 30;		// TH4/TH4
+					dup;
+					invokespecial 31;		// TH4/TH4.<init>()V
+					pop;
+					return;
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 2;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					bspush 10;
+					newarray 11;
+					putfield_a 0;		// reference TH4/TH4.monhoc
+					aload_0;
+					bspush 10;
+					newarray 11;
+					putfield_a 1;		// reference TH4/TH4.diem
+					aload_0;
+					invokevirtual 34;		// javacard/framework/Applet.register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 35;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 9;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L5 1 0 L4;
+				L4:	goto L6;
+				L5:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	return;
+		}
+
+	}
+
+}

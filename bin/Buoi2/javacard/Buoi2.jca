@@ -1,0 +1,891 @@
+// converted by version 1.3
+// on Sat Apr 23 23:12:47 ICT 2022
+
+.package Buoi2 {
+	.aid 0x11:0x22:0x33:0x44:0x66;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.2;		//javacard/framework
+	}
+
+	.applet {
+		0x11:0x22:0x33:0x44:0x66:0x0 Bai2;
+		0x11:0x22:0x33:0x44:0x66:0x1 NameAndDate;
+		0x11:0x22:0x33:0x44:0x66:0x2 Calculator;
+		0x11:0x22:0x33:0x44:0x66:0x3 NameAndDateInput;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] Bai2/ho;
+		// 1
+		instanceFieldRef byte[] Bai2/ten;
+		// 2
+		instanceFieldRef byte[] Bai2/lop;
+		// 3
+		instanceFieldRef short Bai2/len1;
+		// 4
+		instanceFieldRef short Bai2/len2;
+		// 5
+		instanceFieldRef short Bai2/len3;
+		// 6
+		instanceFieldRef byte[] NameAndDate/hoTen;
+		// 7
+		instanceFieldRef byte[] NameAndDate/ngaySinh;
+		// 8
+		instanceFieldRef short NameAndDate/len1;
+		// 9
+		instanceFieldRef short NameAndDate/len2;
+		// 10
+		instanceFieldRef byte[] NameAndDateInput/hoten;
+		// 11
+		instanceFieldRef byte[] NameAndDateInput/ngaysinh;
+		// 12
+		instanceFieldRef short NameAndDateInput/nameLength;
+		// 13
+		instanceFieldRef short NameAndDateInput/birthdayLen;
+		// 14
+		staticMethodRef Bai2/<init>()V;
+		// 15
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 16
+		classRef Calculator;
+		// 17
+		staticMethodRef Calculator/<init>()V;
+		// 18
+		virtualMethodRef 0.3.2([BSB)V;		// javacard/framework/Applet.register([BSB)V
+		// 19
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+		// 20
+		staticMethodRef 0.16.6([BSS)S;		// javacard/framework/Util.setShort([BSS)S
+		// 21
+		virtualMethodRef 0.10.7()S;		// javacard/framework/APDU.setOutgoing()S
+		// 22
+		virtualMethodRef 0.10.9(S)V;		// javacard/framework/APDU.setOutgoingLength(S)V
+		// 23
+		virtualMethodRef 0.10.4(SS)V;		// javacard/framework/APDU.sendBytes(SS)V
+		// 24
+		virtualMethodRef 0.3.2([BSB)V;		// javacard/framework/Applet.register([BSB)V
+		// 25
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+		// 26
+		classRef NameAndDate;
+		// 27
+		staticMethodRef NameAndDate/<init>()V;
+		// 28
+		virtualMethodRef 0.3.2([BSB)V;		// javacard/framework/Applet.register([BSB)V
+		// 29
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+		// 30
+		virtualMethodRef 0.10.1()[B;		// javacard/framework/APDU.getBuffer()[B
+		// 31
+		virtualMethodRef 0.10.6()S;		// javacard/framework/APDU.setIncomingAndReceive()S
+		// 32
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 33
+		classRef Bai2;
+		// 34
+		staticMethodRef 0.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 35
+		virtualMethodRef 0.10.8(SS)V;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+		// 36
+		classRef NameAndDateInput;
+		// 37
+		staticMethodRef NameAndDateInput/<init>()V;
+		// 38
+		virtualMethodRef 0.3.2([BSB)V;		// javacard/framework/Applet.register([BSB)V
+		// 39
+		virtualMethodRef 0.3.3()Z;		// javacard/framework/Applet.selectingApplet()Z
+	}
+
+	.class public Bai2 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 byte[] ho 0;		// [B
+			 byte[] ten 1;		// [B
+			 byte[] lop 2;		// [B
+			 short len1 3;		// S
+			 short len2 4;		// S
+			 short len3 5;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 32;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					bspush 8;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 80;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 104;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 97;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 109;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 68;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 111;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 97;
+					bastore;
+					dup;
+					bspush 7;
+					bspush 110;
+					bastore;
+					putfield_a 0;		// reference Buoi2/Bai2.ho
+					aload_0;
+					sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 72;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 105;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 101;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 117;
+					bastore;
+					putfield_a 1;		// reference Buoi2/Bai2.ten
+					aload_0;
+					sconst_4;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 67;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 84;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 51;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 68;
+					bastore;
+					putfield_a 2;		// reference Buoi2/Bai2.lop
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 33;		// Buoi2/Bai2
+					dup;
+					invokespecial 14;		// Buoi2/Bai2.<init>()V
+					aload_0;
+					sload_1;
+					sconst_1;
+					sadd;
+					aload_0;
+					sload_1;
+					baload;
+					invokevirtual 24;		// javacard/framework/Applet.register([BSB)V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 5;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 25;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 30;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L10 1 0 L4;
+				L4:	aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+				L5:	sload_3;
+					slookupswitch L9 3 0 L6 16 L8 17 L7;
+				L6:	aload_0;
+					getfield_a_this 0;		// reference Buoi2/Bai2.ho
+					arraylength;
+					putfield_s 3;		// short Buoi2/Bai2.len1
+					aload_0;
+					getfield_a_this 1;		// reference Buoi2/Bai2.ten
+					arraylength;
+					putfield_s 4;		// short Buoi2/Bai2.len2
+					getfield_a_this 0;		// reference Buoi2/Bai2.ho
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 1;		// reference Buoi2/Bai2.ten
+					sconst_0;
+					aload_2;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					getfield_s_this 4;		// short Buoi2/Bai2.len2
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					getfield_s_this 4;		// short Buoi2/Bai2.len2
+					sadd;
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L11;
+				L7:	aload_0;
+					getfield_a_this 2;		// reference Buoi2/Bai2.lop
+					arraylength;
+					putfield_s 3;		// short Buoi2/Bai2.len1
+					getfield_a_this 2;		// reference Buoi2/Bai2.lop
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L11;
+				L8:	aload_0;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					getfield_s_this 4;		// short Buoi2/Bai2.len2
+					sadd;
+					putfield_s 5;		// short Buoi2/Bai2.len3
+					getfield_a_this 0;		// reference Buoi2/Bai2.ho
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 1;		// reference Buoi2/Bai2.ten
+					sconst_0;
+					aload_2;
+					getfield_s_this 3;		// short Buoi2/Bai2.len1
+					getfield_s_this 4;		// short Buoi2/Bai2.len2
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 2;		// reference Buoi2/Bai2.lop
+					sconst_0;
+					aload_2;
+					getfield_s_this 5;		// short Buoi2/Bai2.len3
+					getfield_a_this 2;		// reference Buoi2/Bai2.lop
+					arraylength;
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 5;		// short Buoi2/Bai2.len3
+					getfield_a_this 2;		// reference Buoi2/Bai2.lop
+					arraylength;
+					sadd;
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L11;
+				L9:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+					goto L11;
+				L10:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	return;
+		}
+
+	}
+
+	.class public Calculator 1 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			static final byte Calculator_CLA = -96;		// B
+			static final byte INS_CONG = 0;		// B
+			static final byte INS_TRU = 1;		// B
+			static final byte INS_NHAN = 2;		// B
+			static final byte INS_CHIA = 3;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 32;		// javacard/framework/Applet.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 16;		// Buoi2/Calculator
+					dup;
+					invokespecial 17;		// Buoi2/Calculator.<init>()V
+					aload_0;
+					sload_1;
+					sconst_1;
+					sadd;
+					aload_0;
+					sload_1;
+					baload;
+					invokevirtual 18;		// javacard/framework/Applet.register([BSB)V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 3;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 19;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 30;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+					aload_2;
+					sconst_0;
+					baload;
+					bspush -96;
+					if_scmpeq L5;
+				L4:	sspush 28160;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	sconst_0;
+					sstore_3;
+				L6:	aload_2;
+					sconst_2;
+					baload;
+					sstore 4;
+				L7:	aload_2;
+					sconst_3;
+					baload;
+					sstore 5;
+				L8:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L13 0 3 L9 L10 L11 L12;
+				L9:	sload 4;
+					sload 5;
+					sadd;
+					sstore_3;
+					goto L14;
+				L10:	sload 4;
+					sload 5;
+					ssub;
+					sstore_3;
+					goto L14;
+				L11:	sload 4;
+					sload 5;
+					smul;
+					sstore_3;
+					goto L14;
+				L12:	sload 4;
+					sload 5;
+					sdiv;
+					sstore_3;
+					goto L14;
+				L13:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	aload_2;
+					sconst_0;
+					sload_3;
+					invokestatic 20;		// javacard/framework/Util.setShort([BSS)S
+					pop;
+					aload_1;
+					invokevirtual 21;		// javacard/framework/APDU.setOutgoing()S
+					sstore 6;
+				L15:	sload 6;
+					sconst_2;
+					if_scmpge L17;
+				L16:	sspush 26368;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L17:	aload_1;
+					sconst_2;
+					invokevirtual 22;		// javacard/framework/APDU.setOutgoingLength(S)V
+					aload_1;
+					sconst_0;
+					sconst_2;
+					invokevirtual 23;		// javacard/framework/APDU.sendBytes(SS)V
+					return;
+		}
+
+	}
+
+	.class public NameAndDate 2 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 byte[] hoTen 0;		// [B
+			 byte[] ngaySinh 1;		// [B
+			 short len1 2;		// S
+			 short len2 3;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 32;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					bspush 12;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 80;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 104;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 97;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 109;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 68;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 111;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 97;
+					bastore;
+					dup;
+					bspush 7;
+					bspush 110;
+					bastore;
+					dup;
+					bspush 8;
+					bspush 72;
+					bastore;
+					dup;
+					bspush 9;
+					bspush 105;
+					bastore;
+					dup;
+					bspush 10;
+					bspush 101;
+					bastore;
+					dup;
+					bspush 11;
+					bspush 117;
+					bastore;
+					putfield_a 6;		// reference Buoi2/NameAndDate.hoTen
+					aload_0;
+					bspush 10;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 48;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 53;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 47;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 48;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 52;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 47;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 50;
+					bastore;
+					dup;
+					bspush 7;
+					bspush 48;
+					bastore;
+					dup;
+					bspush 8;
+					bspush 48;
+					bastore;
+					dup;
+					bspush 9;
+					bspush 48;
+					bastore;
+					putfield_a 7;		// reference Buoi2/NameAndDate.ngaySinh
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 26;		// Buoi2/NameAndDate
+					dup;
+					invokespecial 27;		// Buoi2/NameAndDate.<init>()V
+					aload_0;
+					sload_1;
+					sconst_1;
+					sadd;
+					aload_0;
+					sload_1;
+					baload;
+					invokevirtual 28;		// javacard/framework/Applet.register([BSB)V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 5;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 29;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 30;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.setIncomingAndReceive()S
+					pop;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L10 1 0 L4;
+				L4:	aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+				L5:	sload_3;
+					slookupswitch L9 3 0 L6 17 L7 34 L8;
+				L6:	aload_0;
+					getfield_a_this 6;		// reference Buoi2/NameAndDate.hoTen
+					arraylength;
+					putfield_s 8;		// short Buoi2/NameAndDate.len1
+					getfield_a_this 6;		// reference Buoi2/NameAndDate.hoTen
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L11;
+				L7:	aload_0;
+					getfield_a_this 7;		// reference Buoi2/NameAndDate.ngaySinh
+					arraylength;
+					putfield_s 8;		// short Buoi2/NameAndDate.len1
+					getfield_a_this 7;		// reference Buoi2/NameAndDate.ngaySinh
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L11;
+				L8:	aload_0;
+					getfield_a_this 6;		// reference Buoi2/NameAndDate.hoTen
+					arraylength;
+					putfield_s 8;		// short Buoi2/NameAndDate.len1
+					aload_0;
+					getfield_a_this 7;		// reference Buoi2/NameAndDate.ngaySinh
+					arraylength;
+					putfield_s 9;		// short Buoi2/NameAndDate.len2
+					getfield_a_this 6;		// reference Buoi2/NameAndDate.hoTen
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 7;		// reference Buoi2/NameAndDate.ngaySinh
+					sconst_0;
+					aload_2;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					getfield_s_this 9;		// short Buoi2/NameAndDate.len2
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 8;		// short Buoi2/NameAndDate.len1
+					getfield_s_this 9;		// short Buoi2/NameAndDate.len2
+					sadd;
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L11;
+				L9:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+					goto L11;
+				L10:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	return;
+		}
+
+	}
+
+	.class public NameAndDateInput 3 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 byte[] hoten 0;		// [B
+			 byte[] ngaysinh 1;		// [B
+			 short nameLength 2;		// S
+			 short birthdayLen 3;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 32;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sspush 256;
+					newarray 11;
+					putfield_a 10;		// reference Buoi2/NameAndDateInput.hoten
+					aload_0;
+					sspush 256;
+					newarray 11;
+					putfield_a 11;		// reference Buoi2/NameAndDateInput.ngaysinh
+					aload_0;
+					sconst_0;
+					putfield_s 12;		// short Buoi2/NameAndDateInput.nameLength
+					aload_0;
+					sconst_0;
+					putfield_s 13;		// short Buoi2/NameAndDateInput.birthdayLen
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	new 36;		// Buoi2/NameAndDateInput
+					dup;
+					invokespecial 37;		// Buoi2/NameAndDateInput.<init>()V
+					aload_0;
+					sload_1;
+					sconst_1;
+					sadd;
+					aload_0;
+					sload_1;
+					baload;
+					invokevirtual 38;		// javacard/framework/Applet.register([BSB)V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 5;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 39;		// javacard/framework/Applet.selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 30;		// javacard/framework/APDU.getBuffer()[B
+					astore_2;
+				L3:	aload_1;
+					invokevirtual 31;		// javacard/framework/APDU.setIncomingAndReceive()S
+					sstore_3;
+				L4:	aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 4;
+				L5:	aload_2;
+					arraylength;
+					sstore 5;
+				L6:	sconst_0;
+					sstore 6;
+				L7:	aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L16 2 1 L8 2 L12;
+				L8:	aload_2;
+					sconst_2;
+					baload;
+					sconst_1;
+					if_scmpne L10;
+				L9:	aload_0;
+					sload 4;
+					putfield_s 12;		// short Buoi2/NameAndDateInput.nameLength
+					aload_2;
+					sconst_5;
+					getfield_a_this 10;		// reference Buoi2/NameAndDateInput.hoten
+					sload 6;
+					sload_3;
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+				L10:	aload_2;
+					sconst_2;
+					baload;
+					sconst_2;
+					if_scmpne L17;
+				L11:	aload_0;
+					sload 4;
+					putfield_s 13;		// short Buoi2/NameAndDateInput.birthdayLen
+					aload_2;
+					sconst_5;
+					getfield_a_this 11;		// reference Buoi2/NameAndDateInput.ngaysinh
+					sload 6;
+					sload_3;
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					goto L17;
+				L12:	aload_2;
+					sconst_2;
+					baload;
+					sconst_1;
+					if_scmpne L14;
+				L13:	getfield_a_this 10;		// reference Buoi2/NameAndDateInput.hoten
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 12;		// short Buoi2/NameAndDateInput.nameLength
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 12;		// short Buoi2/NameAndDateInput.nameLength
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L17;
+				L14:	aload_2;
+					sconst_2;
+					baload;
+					sconst_2;
+					if_scmpne L17;
+				L15:	getfield_a_this 11;		// reference Buoi2/NameAndDateInput.ngaysinh
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 13;		// short Buoi2/NameAndDateInput.birthdayLen
+					invokestatic 34;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_s_this 13;		// short Buoi2/NameAndDateInput.birthdayLen
+					invokevirtual 35;		// javacard/framework/APDU.setOutgoingAndSend(SS)V
+					goto L17;
+				L16:	sspush 27904;
+					invokestatic 15;		// javacard/framework/ISOException.throwIt(S)V
+				L17:	return;
+		}
+
+	}
+
+}
